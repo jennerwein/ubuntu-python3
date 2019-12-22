@@ -1,4 +1,4 @@
-# ubunutu-python3
+# ubuntu-python3
 
 Ubuntu image 18.04 with python3 including pip3
 
