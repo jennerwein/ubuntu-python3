@@ -2,7 +2,12 @@
 # 
 FROM ubuntu:18.04
 
+ENV TZ=Europe/Berlin
+
 RUN apt-get update -y \
+    # Setting time zone
+    && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
+    && apt-get install -y tzdata \
     && apt-get install -y vim \
     && apt-get install -y python3-pip \
     # delete cache and tmp files (from: vaeum/ubuntu-python3-pip3)
