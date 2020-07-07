@@ -1,6 +1,6 @@
 # Ubuntu with python3 (including pip3)
 # 
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # https://serverfault.com/questions/683605/docker-container-time-timezone-will-not-reflect-changes
 ENV TZ=Europe/Berlin
@@ -10,6 +10,8 @@ RUN apt-get update -y \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && apt-get install -y tzdata \
     && apt-get install -y vim \
+    && apt install -y iproute2 \
+    && apt-get install -y curl \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
     # delete cache and tmp files (from: vaeum/ubuntu-python3-pip3)
