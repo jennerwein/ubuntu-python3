@@ -6,6 +6,7 @@ FROM ubuntu:20.04
 ENV TZ=Europe/Berlin
 
 RUN apt-get update -y \
+    && apt-get upgrade -y \
     # Setting time zone
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && apt-get install -y tzdata \
@@ -14,6 +15,8 @@ RUN apt-get update -y \
     && apt-get install -y curl \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
+    && apt-get update -y \
+    && apt-get upgrade -y \
     # delete cache and tmp files (from: vaeum/ubuntu-python3-pip3)
     # results in a more than 20MB smaller image
     && apt-get clean \
@@ -37,4 +40,5 @@ ENV LANG de_DE.UTF-8
 ENV LANGUAGE de_DE:en  
 ENV LC_ALL de_DE.UTF-8 
 
-CMD [ "python3" ]
+# # Commented it out if you want to start plain ubuntu
+# CMD [ "python3" ]
