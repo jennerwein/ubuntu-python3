@@ -12,6 +12,7 @@ RUN apt-get update -y \
     && apt-get install -y tzdata \
     && apt-get install -y vim \
     && apt install -y iproute2 \
+    && apt install -y iputils-ping \
     && apt-get install -y curl \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
