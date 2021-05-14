@@ -11,13 +11,12 @@ RUN apt-get update -y \
     && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && apt-get install -y tzdata \
     && apt-get install -y vim \
-    && apt install -y iproute2 \
-    && apt install -y iputils-ping \
+    && apt-get install -y iproute2 \
+    && apt-get install -y iputils-ping \
     && apt-get install -y curl \
+    && apt-get install -y dnsutils \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
-    && apt-get update -y \
-    && apt-get upgrade -y \
     # delete cache and tmp files (from: vaeum/ubuntu-python3-pip3)
     # results in a more than 20MB smaller image
     && apt-get clean \
