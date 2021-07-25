@@ -1,5 +1,7 @@
 # Ubuntu with python3 (including pip3)
-# 
+# Maintainer: martin.leischner@h-brs.de
+# Last change: 25.07.2021: net-tools added
+
 FROM ubuntu:20.04
 
 # https://serverfault.com/questions/683605/docker-container-time-timezone-will-not-reflect-changes
@@ -15,6 +17,7 @@ RUN apt-get update -y \
     && apt-get install -y iputils-ping \
     && apt-get install -y curl \
     && apt-get install -y dnsutils \
+    && apt-get install -y net-tools \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
     # delete cache and tmp files (from: vaeum/ubuntu-python3-pip3)
