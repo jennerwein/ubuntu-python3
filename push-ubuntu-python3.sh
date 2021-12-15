@@ -1,7 +1,7 @@
 #!/bin/sh
 # Script to build a test image (before pushing to git)
 
-TAG=v1.0.2      # Stable Version 02.10.2021
+TAG=v1.0.3      # Stable Version 15.12.2021
 NAME=ubuntu-python3
 
 # Tag the image

@@ -1,6 +1,7 @@
 # Ubuntu with python3 (including pip3)
 # Maintainer: martin.leischner@h-brs.de
-# Last change: 25.07.2021: net-tools added
+# Change 25.07.2021 (v1.0.2): net-tools added
+# Change 15.12.2021 (v1.0.3): Update
 
 FROM ubuntu:20.04
 
