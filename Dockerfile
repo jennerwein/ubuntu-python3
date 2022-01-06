@@ -2,6 +2,7 @@
 # Maintainer: martin.leischner@h-brs.de
 # Change 25.07.2021 (v1.0.2): net-tools added
 # Change 15.12.2021 (v1.0.3): Update
+# Change 06.11.2022 (v1.0.4): Update + python-is-python3
 
 FROM ubuntu:20.04
 
@@ -21,6 +22,7 @@ RUN apt-get update -y \
     && apt-get install -y net-tools \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
+    && apt-get install -y python-is-python3 \
     # delete cache and tmp files (from: vaeum/ubuntu-python3-pip3)
     # results in a more than 20MB smaller image
     && apt-get clean \
