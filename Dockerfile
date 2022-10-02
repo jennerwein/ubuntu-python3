@@ -6,6 +6,7 @@
 # Change 17.05.2022 (v1.1, python 3.10.4): Ubuntu 22.04
 # Change 27.06.2022 (v1.1.1, python 3.10.4): Update
 # Change 01.10.2022 (v1.1.2, python 3.10.6): Update
+# Change 02.10.2022 (v1.2, python 3.10.6): vim configured
 
 FROM ubuntu:22.04
 
@@ -48,6 +49,10 @@ RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen && \
 ENV LANG de_DE.UTF-8  
 ENV LANGUAGE de_DE:en  
 ENV LC_ALL de_DE.UTF-8 
+
+# Configure vim
+COPY vim/.vimrc /root/.vimrc
+COPY vim/badwolf.vim /root/.vim/colors/badwolf.vim
 
 # # Commented it out if you want to start plain ubuntu
 # CMD [ "python3" ]
