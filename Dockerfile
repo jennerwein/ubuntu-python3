@@ -7,11 +7,14 @@
 # Change 27.06.2022 (v1.1.1, python 3.10.4): Update
 # Change 01.10.2022 (v1.1.2, python 3.10.6): Update
 # Change 02.10.2022 (v1.2, python 3.10.6): vim configured
+# Change 02.10.2022 (v1.2.1, python 3.10.6): Update
+# Change 17.11.2022 (v1.2.2, python 3.10.6): PYTHONUNBUFFERED=1
 
 FROM ubuntu:22.04
 
 # https://serverfault.com/questions/683605/docker-container-time-timezone-will-not-reflect-changes
 ENV TZ=Europe/Berlin
+ENV PYTHONUNBUFFERED=1
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
