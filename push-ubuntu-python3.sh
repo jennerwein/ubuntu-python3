@@ -8,7 +8,7 @@
 # TAG=v1.1.2      # Stable Version 01.10.2022 (update)
 # TAG=v1.2        # Stable Version 02.10.2022 (vim configured)
 # TAG=v1.2.1      # Stable Version 27.10.2022 (update)
-TAG=v1.2.2      # Stable Version 17.11.2022 (PYTHONUNBUFFERED=1)
+TAG=v1.2.2      # Stable Version 17.11.2022 (PYTHONUNBUFFERED=1+alias)
 NAME=ubuntu-python3
 
 # Tag the image

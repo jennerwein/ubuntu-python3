@@ -8,7 +8,7 @@
 # Change 01.10.2022 (v1.1.2, python 3.10.6): Update
 # Change 02.10.2022 (v1.2, python 3.10.6): vim configured
 # Change 02.10.2022 (v1.2.1, python 3.10.6): Update
-# Change 17.11.2022 (v1.2.2, python 3.10.6): PYTHONUNBUFFERED=1
+# Change 17.11.2022 (v1.2.2, python 3.10.6): PYTHONUNBUFFERED=1 + alias
 
 FROM ubuntu:22.04
 
@@ -56,6 +56,10 @@ ENV LC_ALL de_DE.UTF-8
 # Configure vim
 COPY vim/.vimrc /root/.vimrc
 COPY vim/badwolf.vim /root/.vim/colors/badwolf.vim
+
+# Set alias
+RUN echo 'alias c="clear"' >> ~/.bashrc
+RUN echo 'alias h="history"' >> ~/.bashrc
 
 # # Commented it out if you want to start plain ubuntu
 # CMD [ "python3" ]
