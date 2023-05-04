@@ -9,6 +9,7 @@
 # Change 02.10.2022 (v1.2, python 3.10.6): vim configured
 # Change 02.10.2022 (v1.2.1, python 3.10.6): Update
 # Change 17.11.2022 (v1.2.2, python 3.10.6): PYTHONUNBUFFERED=1 +alias+wheel
+# Change 04.05.2023 (v1.2.3, python 3.10.6): Update
 
 FROM ubuntu:22.04
 
@@ -62,7 +63,7 @@ RUN echo 'alias c="clear"' >> ~/.bashrc \
  && echo 'alias h="history"' >> ~/.bashrc
 
 # Update von pip + wheel
-RUN pip install -U wheel \
+RUN pip install -U pip \
  && pip install -U wheel
 
 # # Commented it out if you want to start plain ubuntu
