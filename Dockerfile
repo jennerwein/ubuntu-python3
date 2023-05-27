@@ -59,8 +59,9 @@ COPY vim/.vimrc /root/.vimrc
 COPY vim/badwolf.vim /root/.vim/colors/badwolf.vim
 
 # Set alias
-RUN echo 'alias c="clear"' >> ~/.bashrc \
- && echo 'alias h="history"' >> ~/.bashrc
+RUN echo 'alias c="clear"' >> ~/.bashrc   \
+ && echo 'alias h="history"' >> ~/.bashrc \
+ && echo 'alias act=". venv/bin/activate"' >> ~/.bashrc
 
 # Update von pip + wheel
 RUN pip install -U pip \

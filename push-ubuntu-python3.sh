@@ -9,7 +9,8 @@
 # TAG=v1.2        # Stable Version 02.10.2022 (vim configured)
 # TAG=v1.2.1      # Stable Version 27.10.2022 (update)
 # TAG=v1.2.2      # Stable Version 17.11.2022 (alias+wheel)
-TAG=v1.2.3      # Stable Version 04.05.2023 (python 3.10.6, update
+# TAG=v1.2.3      # Stable Version 04.05.2023 (python 3.10.6, update)
+TAG=v1.2.4      # Stable Version 04.05.2023 (alias, update)
 
 NAME=ubuntu-python3
 
