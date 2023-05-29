@@ -10,12 +10,16 @@
 # Change 02.10.2022 (v1.2.1, python 3.10.6): Update
 # Change 17.11.2022 (v1.2.2, python 3.10.6): PYTHONUNBUFFERED=1 +alias+wheel
 # Change 04.05.2023 (v1.2.3, python 3.10.6): Update
+# Change 27.05.2023 (v1.2.4, python 3.10.6): Update, Alias
+# Change 29.05.2023 (v1.2.4, python 3.10.6): Update, ENV optimiert
 
 FROM ubuntu:22.04
 
 # https://serverfault.com/questions/683605/docker-container-time-timezone-will-not-reflect-changes
 ENV TZ=Europe/Berlin
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 
 RUN apt-get update -y \
     && apt-get upgrade -y \
