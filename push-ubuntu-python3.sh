@@ -11,8 +11,9 @@
 # TAG=v1.2.2      # Stable Version 17.11.2022 (alias+wheel)
 # TAG=v1.2.3      # Stable Version 04.05.2023 (update)
 # TAG=v1.2.4      # Stable Version 27.05.2023 (update, alias)
+# TAG=v1.2.5      # Stable Version 29.05.2023 (update, ENV)
 
-TAG=v1.2.5      # Stable Version 29.05.2023 (update, ENV)
+TAG=v1.2.6      # Stable Version 26.10.2023 (update)
 
 NAME=ubuntu-python3
 
