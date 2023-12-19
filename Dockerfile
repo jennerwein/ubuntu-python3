@@ -11,7 +11,7 @@
 # Change 17.11.2022 (v1.2.2, python 3.10.6): PYTHONUNBUFFERED=1 +alias+wheel
 # Change 04.05.2023 (v1.2.3, python 3.10.6): Update
 # Change 27.05.2023 (v1.2.4, python 3.10.6): Update, Alias
-# Change 29.05.2023 (v1.2.4, python 3.10.6): Update, ENV optimiert
+# Change 29.05.2023 (v1.2.6, python 3.10.6): Update, ENV optimiert
 
 FROM ubuntu:22.04
 
