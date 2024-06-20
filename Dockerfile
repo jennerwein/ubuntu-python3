@@ -13,7 +13,8 @@
 # Change 27.05.2023 (v1.2.4, python 3.10.6): Update, Alias
 # Change 29.05.2023 (v1.2.6, python 3.10.6): Update, ENV optimiert
 
-FROM ubuntu:22.04
+# https://hub.docker.com/_/ubuntu
+FROM ubuntu:24.04
 
 # https://serverfault.com/questions/683605/docker-container-time-timezone-will-not-reflect-changes
 ENV TZ=Europe/Berlin
@@ -32,6 +33,7 @@ RUN apt-get update -y \
     && apt-get install -y curl \
     && apt-get install -y dnsutils \
     && apt-get install -y net-tools \
+    && apt-get install -y postgresql-client \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
     && apt-get install -y python-is-python3 \
@@ -66,10 +68,6 @@ COPY vim/badwolf.vim /root/.vim/colors/badwolf.vim
 RUN echo 'alias c="clear"' >> ~/.bashrc   \
  && echo 'alias h="history"' >> ~/.bashrc \
  && echo 'alias act=". venv/bin/activate"' >> ~/.bashrc
-
-# Update von pip + wheel
-RUN pip install -U pip \
- && pip install -U wheel
 
 # # Commented it out if you want to start plain ubuntu
 # CMD [ "python3" ]

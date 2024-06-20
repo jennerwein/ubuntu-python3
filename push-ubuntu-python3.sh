@@ -14,8 +14,9 @@
 # TAG=v1.2.5      # Stable Version 29.05.2023 (update, ENV)
 # TAG=v1.2.6      # Stable Version 26.10.2023 (update)
 # TAG=v1.2.7      # Stable Version 19.12.2023 (update)
+# TAG=v1.2.7      # Stable Version 19.12.2023 (update)
 
-TAG=v1.2.8      # Stable Version 19.12.2023 (update)
+TAG=v1.3          # Stable Version 21.06.2024 (Ubuntu 24.04)
 
 NAME=ubuntu-python3
 
