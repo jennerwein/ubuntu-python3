@@ -16,8 +16,9 @@
 # TAG=v1.2.7      # Stable Version 19.12.2023 (update)
 # TAG=v1.2.7      # Stable Version 19.12.2023 (update)
 # TAG=v1.3        # Stable Version 21.06.2024 (Ubuntu 24.04)
+# TAG=v1.4        # Stable Version 21.06.2024 (Python in virtEnv /opt/venv/)
 
-TAG=v1.4          # Stable Version 21.06.2024 (Python in virtEnv /opt/venv/)
+TAG=v1.4.1        # Stable Version 21.06.2024 (ENV CONTAINER=true)
 
 NAME=ubuntu-python3
 

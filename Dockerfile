@@ -12,6 +12,9 @@
 # Change 04.05.2023 (v1.2.3, python 3.10.6): Update
 # Change 27.05.2023 (v1.2.4, python 3.10.6): Update, Alias
 # Change 29.05.2023 (v1.2.6, python 3.10.6): Update, ENV optimiert
+# Change 20.06.2024 (v1.3, python 3.12.3): Ubuntu 24.04
+# Change 21.06.2024 (v1.4, python 3.12.3): Python in virtEnv /opt/venv/
+# Change 21.06.2024 (v1.4.1, python 3.12.3): ENV CONTAINER=true
 
 # https://hub.docker.com/_/ubuntu
 FROM ubuntu:24.04
@@ -70,6 +73,9 @@ RUN echo 'alias c="clear"' >> ~/.bashrc   \
  && echo 'alias h="history"' >> ~/.bashrc \
  && echo 'alias act=". venv/bin/activate"' >> ~/.bashrc
 
+# Markiere als Container
+ENV CONTAINER=true
+
 ############################################################
 # Activate virtual environment for Python
 # https://pythonspeed.com/articles/activate-virtualenv-dockerfile
@@ -78,6 +84,7 @@ ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+# Aktualisiere pip
 RUN pip install --upgrade pip
 
 ############################################################
