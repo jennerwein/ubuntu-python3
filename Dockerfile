@@ -37,6 +37,8 @@ RUN apt-get update -y \
     && apt-get install -y dnsutils \
     && apt-get install -y net-tools \
     && apt-get install -y postgresql-client \
+    && apt-get install -y sqlite3 \
+    && apt-get install -y redis-tools \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
     && apt-get install -y python-is-python3 \
@@ -69,9 +71,14 @@ COPY vim/.vimrc /root/.vimrc
 COPY vim/badwolf.vim /root/.vim/colors/badwolf.vim
 
 # Set alias
-RUN echo 'alias c="clear"' >> ~/.bashrc   \
- && echo 'alias h="history"' >> ~/.bashrc \
- && echo 'alias act=". venv/bin/activate"' >> ~/.bashrc
+RUN echo 'alias c="clear"' >> ~/.bashrc                      \
+&& echo 'alias h="history"' >> ~/.bashrc                     \
+&& echo 'alias act=". venv/bin/activate"' >> ~/.bashrc       \
+&& echo 'alias st="python supertest.py"' >> ~/.bashrc        \
+&& echo 'alias st1="python supertest1.py"' >> ~/.bashrc      \
+&& echo 'alias st2="python supertest2.py"' >> ~/.bashrc      \
+&& echo 'alias cir="celery inspect registered"' >> ~/.bashrc \
+&& echo 'alias cia="celery inspect active"' >> ~/.bashrc
 
 # Markiere als Container
 ENV CONTAINER=true
@@ -88,6 +95,16 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN pip install --upgrade pip
 
 ############################################################
+
+# Setzt das Arbeitsverzeichnis für die nachfolgenden Befehle
+WORKDIR /app/code
+
+# # Installation der Python-Requirements (ALS OPTION)
+# COPY ./code/requirements.txt .
+# # install requirements for the app trapp
+# RUN pip3 install -r requirements.txt 
+
+EXPOSE 8000
 
 # # Commented it out if you want to start plain ubuntu
 # CMD [ "python3" ]
