@@ -37,6 +37,7 @@ RUN apt-get update -y \
     && apt-get install -y locales \
     && apt-get install -y python3-pip \
     && apt-get install -y python-is-python3 \
+    && apt-get install -y python3.12-venv \
     # delete cache and tmp files (from: vaeum/ubuntu-python3-pip3)
     # results in a more than 20MB smaller image
     && apt-get clean \
@@ -68,6 +69,18 @@ COPY vim/badwolf.vim /root/.vim/colors/badwolf.vim
 RUN echo 'alias c="clear"' >> ~/.bashrc   \
  && echo 'alias h="history"' >> ~/.bashrc \
  && echo 'alias act=". venv/bin/activate"' >> ~/.bashrc
+
+############################################################
+# Activate virtual environment for Python
+# https://pythonspeed.com/articles/activate-virtualenv-dockerfile
+
+ENV VIRTUAL_ENV=/opt/venv
+RUN python3 -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+
+RUN pip install --upgrade pip
+
+############################################################
 
 # # Commented it out if you want to start plain ubuntu
 # CMD [ "python3" ]
