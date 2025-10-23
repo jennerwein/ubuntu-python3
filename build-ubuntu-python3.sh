@@ -1,5 +1,5 @@
 #!/bin/sh
-# Script to build a test image.(Use it before pushing to git)
+# Script to build a test image.(To test before pushing to git)
 
 TAG=test
 NAME=ubuntu-python3
