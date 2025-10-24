@@ -1,4 +1,5 @@
 # Ubuntu with python3
+# TAG=2.0.1      # Mit Wheel
 
 # https://hub.docker.com/_/ubuntu
 FROM ubuntu:24.04
@@ -82,7 +83,8 @@ RUN set -eux && python3 -m venv "$VIRTUAL_ENV"
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # Aktualisiere pip
-RUN pip install --upgrade pip
+# Neu: Tooling für saubere/pfeilschnelle Installs
+RUN pip install --upgrade pip setuptools wheel
 
 ##### BASISINSTALLATION ABGESCHLOSSEN #########################################
 

@@ -19,7 +19,8 @@
 # TAG=v1.4        # Stable Version 21.06.2024 (Python in virtEnv /opt/venv/)
 # TAG=v1.4.1      # Stable Version 21.06.2024 (ENV CONTAINER=true)
 # TAG=v1.4.2      # Stable Version 21.06.2024 (prepare inst. requirements)
-TAG=2.0.0      # New start
+# TAG=2.0.0      # New start
+TAG=2.0.1      # Mit Wheel
 
 NAME=ubuntu-python3
 
